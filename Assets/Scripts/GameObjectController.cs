@@ -17,6 +17,6 @@ public class GameObjectController : MonoBehaviour
     {
         gameOverTime -= Time.deltaTime;
         if (gameOverTime <= 0.0f)
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
     }
 }

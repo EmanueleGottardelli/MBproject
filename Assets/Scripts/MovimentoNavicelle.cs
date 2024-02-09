@@ -41,7 +41,7 @@ public class MovimentoNavicelle : MonoBehaviour
 
     void GameOver()
     {
-        SceneManager.LoadScene(1); // cambio di scena
+        SceneManager.LoadScene(2); // cambio di scena
     }
     // Update viene chiamata ogni frame
     void Update()
