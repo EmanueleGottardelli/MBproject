@@ -7,4 +7,9 @@ public class Menù : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void CaricamentoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
