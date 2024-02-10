@@ -8,17 +8,11 @@ public class Login : MonoBehaviour
     public InputField passwordInputField;
     public Button loginButton;
     public Text errorMessageText;
+    public Button signButton;
 
     void Start()
     {
-        // Controlla se ci sono credenziali memorizzate e le imposta automaticamente nei campi di input
-        if (PlayerPrefs.HasKey("username"))
-        {
-            usernameInputField.text = PlayerPrefs.GetString("username");
-        }
-
-        // Aggiungi listener per il click del pulsante di accesso
-        loginButton.onClick.AddListener(OnLoginButtonClick);
+     
     }
 
     void OnLoginButtonClick()
@@ -27,19 +21,29 @@ public class Login : MonoBehaviour
         string password = passwordInputField.text;
 
         // Simula un controllo delle credenziali
-        if (username == "admin" && password == "password")
+        if (CheckCredentials(username, password))
         {
-            // Salva il nome utente nelle preferenze del giocatore
-            PlayerPrefs.SetString("username", username);
-            PlayerPrefs.Save();
-
             // Naviga alla scena principale del gioco
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene(1);
         }
         else
         {
             // Mostra un messaggio di errore se le credenziali sono errate
-            errorMessageText.text = "Username o password errati.";
+            errorMessageText.text = "Nome utente o password errati.";
         }
+    }
+    void OnSignInButtonClick()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    bool CheckCredentials(string username, string password)
+    {
+        // Verifica se il nome utente e la password corrispondono
+        if (PlayerPrefs.HasKey(username) && PlayerPrefs.GetString(username) == password)
+        {
+            return true;
+        }
+        return false;
     }
 }
