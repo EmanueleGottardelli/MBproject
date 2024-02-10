@@ -5,11 +5,11 @@ public class Menù : MonoBehaviour
 {
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void CaricamentoMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

@@ -25,6 +25,6 @@ public class GameObjectController : MonoBehaviour
         int secondsLeft = Mathf.CeilToInt(gameOverTime);
         countdownText.text = "Return to menu in: " + secondsLeft.ToString();
         if (gameOverTime <= 0.0f)
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
     }
 }
