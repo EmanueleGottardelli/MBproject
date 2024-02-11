@@ -15,7 +15,7 @@ public class Login : MonoBehaviour
      
     }
 
-    void OnLoginButtonClick()
+    public void OnLoginButtonClick()
     {
         string username = usernameInputField.text;
         string password = passwordInputField.text;
@@ -32,12 +32,12 @@ public class Login : MonoBehaviour
             errorMessageText.text = "Nome utente o password errati.";
         }
     }
-    void OnSignInButtonClick()
+    public void OnSignInButtonClick()
     {
         SceneManager.LoadScene(4);
     }
 
-    bool CheckCredentials(string username, string password)
+    public bool CheckCredentials(string username, string password)
     {
         // Verifica se il nome utente e la password corrispondono
         if (PlayerPrefs.HasKey(username) && PlayerPrefs.GetString(username) == password)

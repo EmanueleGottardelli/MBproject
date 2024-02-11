@@ -469,6 +469,7 @@ MonoBehaviour:
   passwordInputField: {fileID: 808046468}
   loginButton: {fileID: 1012144977}
   errorMessageText: {fileID: 500761351}
+  signButton: {fileID: 1926124569}
 --- !u!1 &678985617
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +762,7 @@ GameObject:
   - component: {fileID: 1012144979}
   - component: {fileID: 1012144978}
   - component: {fileID: 1012144977}
+  - component: {fileID: 1012144980}
   m_Layer: 5
   m_Name: Accedi
   m_TagString: Untagged
@@ -832,13 +834,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1012144980}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: OnLoginButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -882,6 +884,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012144975}
   m_CullTransparentMesh: 1
+--- !u!114 &1012144980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012144975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36049f602f92e2a4eb418a2c4ad5d68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInputField: {fileID: 1892787316}
+  passwordInputField: {fileID: 808046468}
+  loginButton: {fileID: 1012144977}
+  errorMessageText: {fileID: 500761351}
+  signButton: {fileID: 1926124569}
 --- !u!1 &1177888294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,8 +1795,9 @@ GameObject:
   - component: {fileID: 1926124571}
   - component: {fileID: 1926124570}
   - component: {fileID: 1926124569}
+  - component: {fileID: 1926124572}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SignIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1866,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1926124570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1926124572}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: OnSignInButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1926124570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,6 +1917,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926124567}
   m_CullTransparentMesh: 1
+--- !u!114 &1926124572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926124567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36049f602f92e2a4eb418a2c4ad5d68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInputField: {fileID: 1892787316}
+  passwordInputField: {fileID: 808046468}
+  loginButton: {fileID: 1012144977}
+  errorMessageText: {fileID: 500761351}
+  signButton: {fileID: 1926124569}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

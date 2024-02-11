@@ -1563,10 +1563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf9d0e0ddf2b27489e94f17ad6f9f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameInputField: {fileID: 0}
-  passwordInputField: {fileID: 0}
-  SignIn: {fileID: 0}
-  errorMessageText: {fileID: 0}
+  usernameInputField: {fileID: 99284353}
+  passwordInputField: {fileID: 868161856}
+  SignIn: {fileID: 1569495534}
+  errorMessageText: {fileID: 1307809724}
 --- !u!1 &1870715648
 GameObject:
   m_ObjectHideFlags: 0
