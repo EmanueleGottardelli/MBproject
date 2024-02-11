@@ -6,11 +6,12 @@ TagManager:
   tags:
   - laser
   - nemico
+  - mianavicella
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - mianavicella
   - Water
   - UI
   - laser
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: mianavicella
+    uniqueID: 365015679
     locked: 0

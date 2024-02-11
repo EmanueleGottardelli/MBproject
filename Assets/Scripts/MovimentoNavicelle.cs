@@ -48,7 +48,7 @@ public class MovimentoNavicelle : MonoBehaviour
     {
         this.transform.position -= new Vector3(velocita, 0, 0) * Time.deltaTime;
 
-        if(this.transform.position.x <= -10.0f)
+        if(this.transform.position.x <= -9.0f)
         {
             GameOver();
         }
