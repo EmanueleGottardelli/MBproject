@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioSliderController : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource audioSource2;
     public Slider slider;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {
@@ -23,7 +29,7 @@ public class AudioSliderController : MonoBehaviour
         slider.onValueChanged.AddListener(delegate { OnSliderValueChanged(); });
     }
 
-   public void OnSliderValueChanged()
+    void OnSliderValueChanged()
     {
         // Imposta il volume dell'AudioSource in base al valore dello Slider
         audioSource.volume = slider.value;
