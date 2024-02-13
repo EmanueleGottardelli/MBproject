@@ -7,6 +7,7 @@ TagManager:
   - laser
   - nemico
   - mianavicella
+  - vita
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - nemico1
   - nemico2
   - nemico3
-  - 
+  - vita
   - 
   - 
   - 
