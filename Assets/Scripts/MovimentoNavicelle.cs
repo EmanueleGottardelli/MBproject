@@ -10,10 +10,9 @@ public class MovimentoNavicelle : MonoBehaviour
     public int _tempScore;
     public Giocatore giocatore;
 
-
     void Start()
     {
-
+        
     }
     void AddScore()
     {
@@ -41,9 +40,8 @@ public class MovimentoNavicelle : MonoBehaviour
             }
         }
     }
-   
 
-    
+
     // Update viene chiamata ogni frame
     void Update()
     {
@@ -52,7 +50,11 @@ public class MovimentoNavicelle : MonoBehaviour
         // Controlla se la navicella è oltre la posizione specificata
         if (this.transform.position.x <= -9.0f)
         {
-            giocatore.TakeDamage();
+            giocatore.currentLives--;
+            if (giocatore.currentLives <= 0)
+            {
+                SceneManager.LoadScene(3);
+            }
             Destroy(this.gameObject);
         }
     }

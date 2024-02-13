@@ -20,7 +20,7 @@ public class Controllo : MonoBehaviour
     float shootTimer;
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
-   
+    public Giocatore giocatore;
     void Start()
     {
         i = 0;
