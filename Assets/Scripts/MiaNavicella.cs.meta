@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: 3f0bcc432144c41468a45d4a90fb1a22
+guid: 4e4338e146c07fd4793deb4ed8d7a9ce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - explosion: {fileID: 4518145554088893140, guid: c8833cc4f67b7654c909d20346732224, type: 3}
-  - player: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+  - mynav: {fileID: 606303440828389106, guid: 8a911676acb79754f9698b60a5693609, type: 3}
   - displayHearts: {fileID: 8966621565000663303, guid: ce10168729285c749bf6a86eeb5acd55, type: 3}
-  executionOrder: 150
+  executionOrder: 100
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

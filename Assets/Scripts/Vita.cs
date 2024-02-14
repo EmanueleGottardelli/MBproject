@@ -7,10 +7,17 @@ public class Vita : MonoBehaviour
     public float velocita;
     public GameObject explosion;
     public float lifepoints;
+    public MiaNavicella player;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Verifica se player è null
+        if (player == null)
+        {
+            Debug.LogWarning("Il riferimento a player è null!");
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -21,8 +28,14 @@ public class Vita : MonoBehaviour
             lifepoints -= other.gameObject.GetComponent<Laser>().danno;
             if (lifepoints <= 0)
             {
+                if(player.viteAttuali <= 2)
+                {
+                    player.viteAttuali++;
+                    Debug.Log("Numero di vite: " + player.viteAttuali);               
+                }
                 Destroy(this.gameObject);
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
+
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
                 Destroy(explosionInstance, 0.3f);
             }
@@ -32,6 +45,11 @@ public class Vita : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Verifica se player è null
+        if (player == null)
+        {
+            Debug.LogWarning("Il riferimento a player è null!");
+        }
         this.transform.position -= new Vector3(velocita, 0, 0) * Time.deltaTime;
 
         if (this.transform.position.x <= -9.0f)

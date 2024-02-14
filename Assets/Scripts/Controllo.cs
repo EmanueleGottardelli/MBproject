@@ -9,7 +9,7 @@ public class Controllo : MonoBehaviour
     public GameObject nemico3;
     public GameObject laser;
     public GameObject vita;
-    float spawnTimerVita = 30.0f;
+    float spawnTimerVita = 2.0f;
     float i;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
@@ -20,7 +20,6 @@ public class Controllo : MonoBehaviour
     float shootTimer;
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
-    public Giocatore giocatore;
     void Start()
     {
         i = 0;
@@ -104,7 +103,7 @@ public class Controllo : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(vita,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
-            spawnTimerVita = 40.0f;
+            spawnTimerVita = 2.0f;
         }
 
         if (shootTimer <= 0.0f)
