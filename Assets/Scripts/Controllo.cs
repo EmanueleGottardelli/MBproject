@@ -9,7 +9,7 @@ public class Controllo : MonoBehaviour
     public GameObject nemico3;
     public GameObject laser;
     public GameObject vita;
-    float spawnTimerVita = 2.0f;
+    float spawnTimerVita = 30.0f;
     float i;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
@@ -20,6 +20,7 @@ public class Controllo : MonoBehaviour
     float shootTimer;
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
+    public Text contVite;
     void Start()
     {
         i = 0;
@@ -27,6 +28,8 @@ public class Controllo : MonoBehaviour
         currentspawnTimer2 = ispawnTimer2;
         currentspawnTimer3 = ispawnTimer3;
         PlayerPrefs.SetInt("CurrentScore", 0); // azzeriamo il contatore
+        PlayerPrefs.SetInt("CurrentVite", 1);
+
     }
 
     void SpawnEnemy1()
@@ -69,6 +72,7 @@ public class Controllo : MonoBehaviour
         currentspawnTimer3 -= Time.deltaTime;
         shootTimer -= Time.deltaTime;
         punteggio.text = PlayerPrefs.GetInt("CurrentScore", 0).ToString();
+        contVite.text = PlayerPrefs.GetInt("CurrentVite", 1).ToString();
 
         if (currentspawnTimer <= 0.0f)
         {
@@ -103,7 +107,7 @@ public class Controllo : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(vita,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
-            spawnTimerVita = 2.0f;
+            spawnTimerVita = 30.0f;
         }
 
         if (shootTimer <= 0.0f)

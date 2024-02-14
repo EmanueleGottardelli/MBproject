@@ -10,6 +10,7 @@ public class MovimentoNavicelle : MonoBehaviour
     public float lifepoints;
     public int _tempScore;
     public MiaNavicella player;
+    public Vita vita;
 
     void Start()
     {
@@ -63,6 +64,7 @@ public class MovimentoNavicelle : MonoBehaviour
         {
             Destroy(this.gameObject);
             player.viteAttuali--;
+            vita.MenoScoreVita();
             Debug.Log("Numero di vite: " + player.viteAttuali);
             if (player.viteAttuali <= 0)
             {

@@ -8,7 +8,8 @@ public class Vita : MonoBehaviour
     public GameObject explosion;
     public float lifepoints;
     public MiaNavicella player;
-    
+    public int _tempScoreVita;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,26 @@ public class Vita : MonoBehaviour
         {
             Debug.LogWarning("Il riferimento a player è null!");
         }
+    }
+
+    public void AddScoreVita()
+    {
+        // prende il punteggio attuale
+        int _temp2 = PlayerPrefs.GetInt("CurrentVite");
+        if (_temp2 <= 2) 
+        {
+            _temp2 = _temp2 + _tempScoreVita;
+            PlayerPrefs.SetInt("CurrentVite", _temp2);
+        }     
+    }
+
+    public void MenoScoreVita()
+    {
+        // prende il punteggio attuale
+        int _temp3 = PlayerPrefs.GetInt("CurrentVite");
+        // aggiungiamo i punti e salviamo il nuovo risultato
+        _temp3 = _temp3 - _tempScoreVita;
+        PlayerPrefs.SetInt("CurrentVite", _temp3);
     }
 
     void OnCollisionEnter(Collision other)
@@ -35,9 +56,9 @@ public class Vita : MonoBehaviour
                 }
                 Destroy(this.gameObject);
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
-
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
                 Destroy(explosionInstance, 0.3f);
+                AddScoreVita();
             }
         }
     }

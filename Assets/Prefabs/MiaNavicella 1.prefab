@@ -48,7 +48,6 @@ MonoBehaviour:
   mynav: {fileID: 606303440828389106}
   viteIniziali: 1
   viteAttuali: 1
-  displayHearts: {fileID: 8966621565000663303, guid: ce10168729285c749bf6a86eeb5acd55, type: 3}
 --- !u!1 &1979606080990211197
 GameObject:
   m_ObjectHideFlags: 0
