@@ -48,6 +48,7 @@ public class MovimentoNavicelle : MonoBehaviour
         }
     }
 
+  
 
     // Update viene chiamata ogni frame
     void Update()
