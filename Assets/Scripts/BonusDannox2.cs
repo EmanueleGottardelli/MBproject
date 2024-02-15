@@ -7,17 +7,17 @@ public class BonusDannox2 : MonoBehaviour
     public float velocita;
     public GameObject explosion;
     public float lifepoints;
-    public bool bonusDannox2Iniz = false;
+    public bool bonusDannox2Init = false;
     public bool bonusDannox2Corrente;
     float Timer=10.0f;
     // Start is called before the first frame update
     void Start()
     {
-        bonusDannox2Corrente = bonusDannox2Iniz;
+        bonusDannox2Corrente = bonusDannox2Init;
         Debug.Log("Bonus: " + bonusDannox2Corrente);
     }
 
-    void OnCollisionEnter(Collision other)
+    public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag.Equals("laser"))
         {
@@ -35,6 +35,7 @@ public class BonusDannox2 : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +52,8 @@ public class BonusDannox2 : MonoBehaviour
             if( Timer <= 0)
             {
                 bonusDannox2Corrente = false;
+                Timer = 10.0f;
+                Debug.Log("Bonus: " + bonusDannox2Corrente);
             }
         }
     }
