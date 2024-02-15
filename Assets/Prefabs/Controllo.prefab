@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4585829001521696348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2348607442235237352}
+  - component: {fileID: 7631001561908293747}
+  m_Layer: 0
+  m_Name: Controllo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2348607442235237352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585829001521696348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11515852, y: -0.13755046, z: -9.984357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7631001561908293747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585829001521696348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68078abf16b9e7c40925e801c722ac00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nemico: {fileID: 641507576547967845, guid: 13116e44a9f9e8e488d04ac6ff4e65ae, type: 3}
+  nemico2: {fileID: 5114484128142081269, guid: 2e3677fa3eea78c44aca5647cb58f4a4, type: 3}
+  nemico3: {fileID: 1462112129283201542, guid: fc467e427a16e7d429641a1fa3380caa, type: 3}
+  laser: {fileID: 2155039867163153069, guid: 0835d04da9327bc47a1198f179a9760d, type: 3}
+  laserDannox2: {fileID: 7792547314381484058, guid: afec3c5baf2128343b935994b0d32b03, type: 3}
+  bonusLaserDannox2: {fileID: 1786262449386436625, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
+  vita: {fileID: 489836727478559399, guid: dd06ac9df9ff7c64a9454d1ee4b61497, type: 3}
+  punteggio: {fileID: 0}
+  contVite: {fileID: 0}
+  bonusDannox2: 0

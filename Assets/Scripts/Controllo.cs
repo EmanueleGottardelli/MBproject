@@ -9,8 +9,10 @@ public class Controllo : MonoBehaviour
     public GameObject nemico3;
     public GameObject laser;
     public GameObject laserDannox2;
+    public GameObject bonusLaserDannox2;
     public GameObject vita;
     float spawnTimerVita = 30.0f;
+    float spawnTimerBonusDannox2 = 20.0f;
     float i;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
@@ -23,9 +25,11 @@ public class Controllo : MonoBehaviour
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
     public Text contVite;
+    public bool bonusDannox2;
     void Start()
     {
         i = 0;
+        bonusDannox2 = false;
         currentspawnTimer = ispawnTimer;
         currentspawnTimer2 = ispawnTimer2;
         currentspawnTimer3 = ispawnTimer3;
@@ -69,6 +73,7 @@ public class Controllo : MonoBehaviour
     void Update()
     {
         spawnTimerVita -= Time.deltaTime;
+        spawnTimerBonusDannox2 -= Time.deltaTime;
         currentspawnTimer -= Time.deltaTime;
         currentspawnTimer2 -= Time.deltaTime;
         currentspawnTimer3 -= Time.deltaTime;
@@ -113,27 +118,41 @@ public class Controllo : MonoBehaviour
             spawnTimerVita = 30.0f;
         }
 
+        if (spawnTimerBonusDannox2 <= 0.0f)
+        {
+            GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
+            new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
+            transform.rotation);
+            spawnTimerBonusDannox2 = 20.0f;
+        }
+
 
         if (shootTimer <= 0.0f)
         {
-            if (Input.GetButton("Fire1"))
+            if (bonusDannox2 == false)
             {
-                Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
-                    new Vector3(-5.0f, Input.mousePosition.y, 8));
-                Instantiate(laser, spawnLaserPos, Quaternion.identity);
-                shootTimer = 0.3f;
-            }
+                if (Input.GetButton("Fire1"))
+                {
+                    Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
+                        new Vector3(-5.0f, Input.mousePosition.y, 8));
+                    Instantiate(laser, spawnLaserPos, Quaternion.identity);
+                    shootTimer = 0.3f;
+                }
+            }           
         }
 
         if (shootTimerDannox2 <= 0.0f)
         {
-            if (Input.GetButton("Fire1"))
+            if(bonusDannox2 == true)
             {
-                Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
-                    new Vector3(-5.0f, Input.mousePosition.y, 8));
-                Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
-                shootTimer = 0.3f;
-            }
+                if (Input.GetButton("Fire1"))
+                {
+                    Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
+                        new Vector3(-5.0f, Input.mousePosition.y, 8));
+                    Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
+                    shootTimer = 0.3f;
+                }
+            }           
         }
     }
 }

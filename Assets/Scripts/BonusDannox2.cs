@@ -7,6 +7,8 @@ public class BonusDannox2 : MonoBehaviour
     public float velocita;
     public GameObject explosion;
     public float lifepoints;
+    public Controllo control;
+    float Timer=10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class BonusDannox2 : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
-
+                control.bonusDannox2 = true;               
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
                 Destroy(explosionInstance, 0.3f);               
             }
@@ -38,6 +40,15 @@ public class BonusDannox2 : MonoBehaviour
         if (this.transform.position.x <= -9.0f)
         {
             Destroy(this.gameObject);
+        }
+
+        if (control.bonusDannox2 == true)
+        {
+            Timer -= Time.deltaTime;
+            if( Timer <= 0)
+            {
+                control.bonusDannox2 = false;
+            }
         }
     }
 }
