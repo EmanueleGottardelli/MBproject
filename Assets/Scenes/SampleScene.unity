@@ -368,6 +368,7 @@ MonoBehaviour:
   nemico2: {fileID: 5114484128142081269, guid: 2e3677fa3eea78c44aca5647cb58f4a4, type: 3}
   nemico3: {fileID: 1462112129283201542, guid: fc467e427a16e7d429641a1fa3380caa, type: 3}
   laser: {fileID: 2155039867163153069, guid: 0835d04da9327bc47a1198f179a9760d, type: 3}
+  laserDannox2: {fileID: 7792547314381484058, guid: afec3c5baf2128343b935994b0d32b03, type: 3}
   vita: {fileID: 489836727478559399, guid: dd06ac9df9ff7c64a9454d1ee4b61497, type: 3}
   punteggio: {fileID: 830780375}
   contVite: {fileID: 1009262457}

@@ -8,6 +8,7 @@ public class Controllo : MonoBehaviour
     public GameObject nemico2;
     public GameObject nemico3;
     public GameObject laser;
+    public GameObject laserDannox2;
     public GameObject vita;
     float spawnTimerVita = 30.0f;
     float i;
@@ -18,6 +19,7 @@ public class Controllo : MonoBehaviour
     float currentspawnTimer2;
     float currentspawnTimer3;
     float shootTimer;
+    float shootTimerDannox2;
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
     public Text contVite;
@@ -71,6 +73,7 @@ public class Controllo : MonoBehaviour
         currentspawnTimer2 -= Time.deltaTime;
         currentspawnTimer3 -= Time.deltaTime;
         shootTimer -= Time.deltaTime;
+        shootTimerDannox2 -= Time.deltaTime;
         punteggio.text = PlayerPrefs.GetInt("CurrentScore", 0).ToString();
         contVite.text = PlayerPrefs.GetInt("CurrentVite", 1).ToString();
 
@@ -110,6 +113,7 @@ public class Controllo : MonoBehaviour
             spawnTimerVita = 30.0f;
         }
 
+
         if (shootTimer <= 0.0f)
         {
             if (Input.GetButton("Fire1"))
@@ -117,6 +121,17 @@ public class Controllo : MonoBehaviour
                 Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
                     new Vector3(-5.0f, Input.mousePosition.y, 8));
                 Instantiate(laser, spawnLaserPos, Quaternion.identity);
+                shootTimer = 0.3f;
+            }
+        }
+
+        if (shootTimerDannox2 <= 0.0f)
+        {
+            if (Input.GetButton("Fire1"))
+            {
+                Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
+                    new Vector3(-5.0f, Input.mousePosition.y, 8));
+                Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
                 shootTimer = 0.3f;
             }
         }

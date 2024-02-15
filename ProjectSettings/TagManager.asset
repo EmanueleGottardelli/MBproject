@@ -8,6 +8,7 @@ TagManager:
   - nemico
   - mianavicella
   - vita
+  - bonus
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - nemico2
   - nemico3
   - vita
-  - 
+  - bonusDanno
   - 
   - 
   - 
