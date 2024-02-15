@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.ComponentModel.Design;
-using static UnityEditor.Progress;
 public class MovimentoNavicelle : MonoBehaviour
 {
     public float velocita;

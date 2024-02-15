@@ -150,7 +150,7 @@ public class Controllo : MonoBehaviour
                     Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
                         new Vector3(-5.0f, Input.mousePosition.y, 8));
                     Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
-                    shootTimer = 0.3f;
+                    shootTimerDannox2 = 0.3f;
                 }
             }           
         }
