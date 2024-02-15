@@ -21,15 +21,14 @@ public class Controllo : MonoBehaviour
     float currentspawnTimer2;
     float currentspawnTimer3;
     float shootTimer;
-    float shootTimerDannox2;
     float spawnTimerDecreaseRate = 0.05f;
     public Text punteggio;
     public Text contVite;
-    public bool bonusDannox2;
+    public BonusDannox2 dannoDoppio;
+    
     void Start()
     {
         i = 0;
-        bonusDannox2 = false;
         currentspawnTimer = ispawnTimer;
         currentspawnTimer2 = ispawnTimer2;
         currentspawnTimer3 = ispawnTimer3;
@@ -78,7 +77,6 @@ public class Controllo : MonoBehaviour
         currentspawnTimer2 -= Time.deltaTime;
         currentspawnTimer3 -= Time.deltaTime;
         shootTimer -= Time.deltaTime;
-        shootTimerDannox2 -= Time.deltaTime;
         punteggio.text = PlayerPrefs.GetInt("CurrentScore", 0).ToString();
         contVite.text = PlayerPrefs.GetInt("CurrentVite", 1).ToString();
 
@@ -126,10 +124,14 @@ public class Controllo : MonoBehaviour
             spawnTimerBonusDannox2 = 20.0f;
         }
 
+        if(dannoDoppio.bonusDannox2Corrente == true)
+        {
+            Debug.Log("è cambiato!!!!!!!!!!!!!");
+        }
 
         if (shootTimer <= 0.0f)
         {
-            if (bonusDannox2 == false)
+            if (dannoDoppio.bonusDannox2Corrente == false)
             {
                 if (Input.GetButton("Fire1"))
                 {
@@ -139,18 +141,14 @@ public class Controllo : MonoBehaviour
                     shootTimer = 0.3f;
                 }
             }           
-        }
-
-        if (shootTimerDannox2 <= 0.0f)
-        {
-            if(bonusDannox2 == true)
+         else 
             {
                 if (Input.GetButton("Fire1"))
                 {
                     Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
                         new Vector3(-5.0f, Input.mousePosition.y, 8));
                     Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
-                    shootTimerDannox2 = 0.3f;
+                    shootTimer = 0.3f;
                 }
             }           
         }

@@ -13,6 +13,7 @@ MonoImporter:
   - vita: {fileID: 489836727478559399, guid: dd06ac9df9ff7c64a9454d1ee4b61497, type: 3}
   - punteggio: {instanceID: 0}
   - contVite: {instanceID: 0}
+  - dannoDoppio: {fileID: 5284812644913042058, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
   executionOrder: 20
   icon: {instanceID: 0}
   userData: 

@@ -932,6 +932,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 830780375}
     - target: {fileID: 6520404585509042624, guid: b26179439895dbd4fb4b787b69de345c, type: 3}
+      propertyPath: dannoDoppio
+      value: 
+      objectReference: {fileID: 5284812644913042058, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
+    - target: {fileID: 6520404585509042624, guid: b26179439895dbd4fb4b787b69de345c, type: 3}
       propertyPath: bonusDannox2
       value: 0
       objectReference: {fileID: 0}

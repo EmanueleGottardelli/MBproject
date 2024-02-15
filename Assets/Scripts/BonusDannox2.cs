@@ -7,12 +7,14 @@ public class BonusDannox2 : MonoBehaviour
     public float velocita;
     public GameObject explosion;
     public float lifepoints;
-    public Controllo control;
+    public bool bonusDannox2Iniz = false;
+    public bool bonusDannox2Corrente;
     float Timer=10.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bonusDannox2Corrente = bonusDannox2Iniz;
+        Debug.Log("Bonus: " + bonusDannox2Corrente);
     }
 
     void OnCollisionEnter(Collision other)
@@ -22,10 +24,11 @@ public class BonusDannox2 : MonoBehaviour
             Destroy(other.gameObject);
             lifepoints -= other.gameObject.GetComponent<Laser>().danno;
             if (lifepoints <= 0)
-            {
+            { 
+                bonusDannox2Corrente = true;
                 Destroy(this.gameObject);
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
-                control.bonusDannox2 = true;               
+                Debug.Log("Bonus: " + bonusDannox2Corrente);
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
                 Destroy(explosionInstance, 0.3f);               
             }
@@ -42,12 +45,12 @@ public class BonusDannox2 : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (control.bonusDannox2 == true)
+        if (bonusDannox2Corrente == true)
         {
             Timer -= Time.deltaTime;
             if( Timer <= 0)
             {
-                control.bonusDannox2 = false;
+                bonusDannox2Corrente = false;
             }
         }
     }
