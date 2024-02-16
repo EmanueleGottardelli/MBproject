@@ -10,6 +10,7 @@ public class BonusDannox2 : MonoBehaviour
     public bool bonusDannox2Init = false;
     public bool bonusDannox2Corrente;
     float Timer=10.0f;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class BonusDannox2 : MonoBehaviour
             Destroy(other.gameObject);
             lifepoints -= other.gameObject.GetComponent<Laser>().danno;
             if (lifepoints <= 0)
-            { 
+            {
                 bonusDannox2Corrente = true;
                 Destroy(this.gameObject);
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
@@ -57,4 +58,5 @@ public class BonusDannox2 : MonoBehaviour
             }
         }
     }
+    
 }

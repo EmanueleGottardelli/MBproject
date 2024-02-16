@@ -831,6 +831,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+      propertyPath: BonusDannox2
+      value: 
+      objectReference: {fileID: 5284812644913042058, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
+    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
       propertyPath: laserDannox2
       value: 
       objectReference: {fileID: 7792547314381484058, guid: afec3c5baf2128343b935994b0d32b03, type: 3}

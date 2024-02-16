@@ -26,7 +26,6 @@ public class MiaNavicella : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0) 
         {
@@ -49,4 +48,6 @@ public class MiaNavicella : MonoBehaviour
             }
         }
     }
+   
+
 }
