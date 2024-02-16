@@ -35,7 +35,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy1()
     {
-        i = i + 1;
+        i = i + 0.5f;
         GameObject instance = (GameObject)Instantiate(nemico,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -46,7 +46,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy2()
     {
-        i = i + 1;
+        i = i + 0.5f;
         GameObject instance = (GameObject)Instantiate(nemico2,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -57,7 +57,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy3()
     {
-        i = i + 1;
+        i = i + 0.5f;
         GameObject instance = (GameObject)Instantiate(nemico3,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
