@@ -51,7 +51,7 @@ MonoBehaviour:
   explosion: {fileID: 4518145554088893140, guid: c8833cc4f67b7654c909d20346732224, type: 3}
   lifepoints: 20
   _tempScore: 5
-  player: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+  player: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
   vita: {fileID: 7309611059237556222, guid: dd06ac9df9ff7c64a9454d1ee4b61497, type: 3}
 --- !u!65 &6287688280890643295
 BoxCollider:

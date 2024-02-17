@@ -9,8 +9,8 @@ public class Controllo : MonoBehaviour
     public GameObject nemico3;
     public GameObject bonusLaserDannox2;
     public GameObject vita;
-    float spawnTimerVita = 30.0f;
-    float spawnTimerBonusDannox2 = 15.0f;
+    float spawnTimerVita = 40.0f;
+    float spawnTimerBonusDannox2 = 35.0f;
     float i;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
@@ -108,7 +108,7 @@ public class Controllo : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(vita,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
-            spawnTimerVita = 30.0f;
+            spawnTimerVita = 40.0f;
         }
 
         if (spawnTimerBonusDannox2 <= 0.0f)
@@ -116,32 +116,10 @@ public class Controllo : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
-            spawnTimerBonusDannox2 = 15.0f;
+            spawnTimerBonusDannox2 = 35.0f;
         }
 
-        /*if (shootTimer <= 0.0f)
-        {
-            if (dannoDoppio.bonusDannox2 == false)
-            {
-                if (Input.GetButton("Fire1"))
-                {
-                    Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
-                        new Vector3(-5.0f, Input.mousePosition.y, 8));
-                    Instantiate(laser, spawnLaserPos, Quaternion.identity);
-                    shootTimer = 0.3f;
-                }
-            }
-            else
-            {
-                if (Input.GetButton("Fire1"))
-                {
-                    Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
-                        new Vector3(-5.0f, Input.mousePosition.y, 8));
-                    Instantiate(laserDannox2, spawnLaserPos, Quaternion.identity);
-                    shootTimer = 0.3f;
-                }
-            }
-        }*/
+       
 
         
     }

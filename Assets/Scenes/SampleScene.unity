@@ -798,7 +798,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1456205308412106444
+--- !u!1001 &5417435871293306750
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -806,91 +806,67 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 606303440828389106, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: m_Name
-      value: MiaNavicella
-      objectReference: {fileID: 0}
-    - target: {fileID: 606303440828389106, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979606080990211197, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: vite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 2155039867163153069, guid: 0835d04da9327bc47a1198f179a9760d, type: 3}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: viteAttuali
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: BonusDannox2
-      value: 
-      objectReference: {fileID: 5284812644913042058, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: laserDannox2
-      value: 
-      objectReference: {fileID: 7792547314381484058, guid: afec3c5baf2128343b935994b0d32b03, type: 3}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: viteIniziali
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463991738967476500, guid: 8a911676acb79754f9698b60a5693609, type: 3}
-      propertyPath: AttivazioneDannox2
-      value: 
-      objectReference: {fileID: 5284812644913042058, guid: 5b53dbe34058f914d849db63bb95b209, type: 3}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6917199755719147202, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+    - target: {fileID: 1608784750153782791, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
+      propertyPath: bonusDanno
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
+      propertyPath: attivazioneDannox2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
+      propertyPath: bonusDannoCorrente
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311657639880111716, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
+      propertyPath: m_Name
+      value: MiaNavicella
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8a911676acb79754f9698b60a5693609, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
 --- !u!1001 &9117121369052718031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -972,5 +948,5 @@ SceneRoots:
   - {fileID: 1170388172}
   - {fileID: 221747394}
   - {fileID: 1540873809}
-  - {fileID: 1456205308412106444}
+  - {fileID: 5417435871293306750}
   - {fileID: 1540309612}
