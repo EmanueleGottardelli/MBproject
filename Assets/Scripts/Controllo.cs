@@ -119,7 +119,7 @@ public class Controllo : MonoBehaviour
 
         if (spawnTimerBonusCurrent <= 0.0f)
         {
-            j = j + 2;
+            j = j + 5;
             float randomValue = Random.value; // Genera un numero casuale tra 0 e 1
 
             // Se il numero casuale è inferiore a 0.5, spawniamo il primo bonus, altrimenti il secondo
