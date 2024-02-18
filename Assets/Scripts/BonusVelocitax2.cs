@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusDannox2 : MonoBehaviour
+public class BonusVelocitax2 : MonoBehaviour
 {
     public float velocita;
     public GameObject explosion;
     public float lifepoints;
     public MiaNavicella player;
-   
-  
+
+
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -24,16 +24,16 @@ public class BonusDannox2 : MonoBehaviour
             lifepoints -= other.gameObject.GetComponent<Laser>().danno;
             if (lifepoints <= 0)
             {
-                player.bonusCorrente = 1;
-                Debug.Log("bonus: " + player.bonusCorrente);            
+                player.bonusCorrente = 2;
+                Debug.Log("bonus: " + player.bonusCorrente);
                 Destroy(this.gameObject);
-                GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);               
+                GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
-                Destroy(explosionInstance, 0.3f);               
+                Destroy(explosionInstance, 0.3f);
             }
         }
     }
-    
+
 
     // Update is called once per frame
     void Update()
@@ -49,9 +49,9 @@ public class BonusDannox2 : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-   
+
     }
-    
-    
+
+
 
 }

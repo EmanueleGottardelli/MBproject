@@ -8,9 +8,10 @@ public class Controllo : MonoBehaviour
     public GameObject nemico2;
     public GameObject nemico3;
     public GameObject bonusLaserDannox2;
+    public GameObject bonusLaserVelocitax2;
     public GameObject vita;
     float spawnTimerVita = 40.0f;
-    float spawnTimerBonusDannox2 = 35.0f;
+    float spawnTimerBonus = 35.0f;
     float i;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
@@ -68,7 +69,7 @@ public class Controllo : MonoBehaviour
     void Update()
     {
         spawnTimerVita -= Time.deltaTime;
-        spawnTimerBonusDannox2 -= Time.deltaTime;
+        spawnTimerBonus -= Time.deltaTime;
         currentspawnTimer -= Time.deltaTime;
         currentspawnTimer2 -= Time.deltaTime;
         currentspawnTimer3 -= Time.deltaTime;
@@ -111,12 +112,29 @@ public class Controllo : MonoBehaviour
             spawnTimerVita = 40.0f;
         }
 
-        if (spawnTimerBonusDannox2 <= 0.0f)
+
+        if (spawnTimerBonus <= 0.0f)
         {
-            GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
-            new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
-            transform.rotation);
-            spawnTimerBonusDannox2 = 35.0f;
+
+            float randomValue = Random.value; // Genera un numero casuale tra 0 e 1
+
+            // Se il numero casuale è inferiore a 0.5, spawniamo il primo bonus, altrimenti il secondo
+            if (randomValue < 0.5f)
+            {
+
+                GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
+                new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
+                transform.rotation);
+                spawnTimerBonus = 35.0f;
+            }
+            else
+            {
+                GameObject instance = (GameObject)Instantiate(bonusLaserVelocitax2,
+               new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
+               transform.rotation);
+                spawnTimerBonus = 35.0f;
+            }
+
         }
 
        
