@@ -35,6 +35,7 @@ public class MovimentoNavicelle : MonoBehaviour
         {
             Destroy(other.gameObject);
             lifepoints -= other.gameObject.GetComponent<Laser>().danno;
+            Debug.Log("Lifepoints : " + lifepoints);
             if (lifepoints <= 0)
             {
                 Destroy(this.gameObject);

@@ -69,7 +69,7 @@ public class MiaNavicella : MonoBehaviour
                     Vector3 spawnLaserPos = Camera.main.ScreenToWorldPoint(
                                             new Vector3(-5.0f, Input.mousePosition.y, 8));
                     Instantiate(laserVelocitax2, spawnLaserPos, Quaternion.identity);
-                    shootTimer = 0.1f;
+                    shootTimer = 0.15f;
                 }
             }
         } 

@@ -12,7 +12,9 @@ public class Controllo : MonoBehaviour
     public GameObject vita;
     float spawnTimerVita = 40.0f;
     float spawnTimerBonus = 35.0f;
+    float spawnTimerBonusCurrent;
     float i;
+    float j;
     float ispawnTimer = 2.0f;
     float ispawnTimer2 = 5.0f;
     float ispawnTimer3 = 10.0f;
@@ -25,10 +27,12 @@ public class Controllo : MonoBehaviour
     
     void Start()
     {
+        j = 0;
         i = 0;
         currentspawnTimer = ispawnTimer;
         currentspawnTimer2 = ispawnTimer2;
         currentspawnTimer3 = ispawnTimer3;
+        spawnTimerBonusCurrent = spawnTimerBonus;
         PlayerPrefs.SetInt("CurrentScore", 0); // azzeriamo il contatore
         PlayerPrefs.SetInt("CurrentVite", 1);
 
@@ -36,7 +40,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy1()
     {
-        i = i + 0.5f;
+        i = i + 0.3f;
         GameObject instance = (GameObject)Instantiate(nemico,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -47,7 +51,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy2()
     {
-        i = i + 0.5f;
+        i = i + 0.3f;
         GameObject instance = (GameObject)Instantiate(nemico2,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -58,7 +62,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy3()
     {
-        i = i + 0.5f;
+        i = i + 0.3f;
         GameObject instance = (GameObject)Instantiate(nemico3,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -69,7 +73,7 @@ public class Controllo : MonoBehaviour
     void Update()
     {
         spawnTimerVita -= Time.deltaTime;
-        spawnTimerBonus -= Time.deltaTime;
+        spawnTimerBonusCurrent -= Time.deltaTime;
         currentspawnTimer -= Time.deltaTime;
         currentspawnTimer2 -= Time.deltaTime;
         currentspawnTimer3 -= Time.deltaTime;
@@ -113,9 +117,9 @@ public class Controllo : MonoBehaviour
         }
 
 
-        if (spawnTimerBonus <= 0.0f)
+        if (spawnTimerBonusCurrent <= 0.0f)
         {
-
+            j = j + 2;
             float randomValue = Random.value; // Genera un numero casuale tra 0 e 1
 
             // Se il numero casuale è inferiore a 0.5, spawniamo il primo bonus, altrimenti il secondo
@@ -125,20 +129,23 @@ public class Controllo : MonoBehaviour
                 GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
                 new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
                 transform.rotation);
-                spawnTimerBonus = 35.0f;
+                spawnTimerBonusCurrent = spawnTimerBonus - j;
+                if(spawnTimerBonusCurrent <= 18.0f)
+                {
+                    spawnTimerBonusCurrent = 18.0f;
+                }
             }
             else
             {
                 GameObject instance = (GameObject)Instantiate(bonusLaserVelocitax2,
                new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
                transform.rotation);
-                spawnTimerBonus = 35.0f;
+                spawnTimerBonusCurrent = spawnTimerBonus - j;
+                if (spawnTimerBonusCurrent <= 18.0f)
+                {
+                    spawnTimerBonusCurrent = 18.0f;
+                }
             }
-
         }
-
-       
-
-        
     }
 }
