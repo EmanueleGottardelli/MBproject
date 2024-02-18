@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8bedfa8dc5bba41ad1ae80219c2670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 3
+  velocita: 5
   explosion: {fileID: 4518145554088893140, guid: c8833cc4f67b7654c909d20346732224, type: 3}
   lifepoints: 10
   _tempScore: 2

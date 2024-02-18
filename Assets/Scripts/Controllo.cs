@@ -40,7 +40,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy1()
     {
-        i = i + 0.3f;
+        i = i + 0.4f;
         GameObject instance = (GameObject)Instantiate(nemico,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -51,7 +51,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy2()
     {
-        i = i + 0.3f;
+        i = i + 0.4f;
         GameObject instance = (GameObject)Instantiate(nemico2,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -62,7 +62,7 @@ public class Controllo : MonoBehaviour
 
     void SpawnEnemy3()
     {
-        i = i + 0.3f;
+        i = i + 0.4f;
         GameObject instance = (GameObject)Instantiate(nemico3,
             new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
             transform.rotation);
@@ -83,18 +83,18 @@ public class Controllo : MonoBehaviour
         if (currentspawnTimer <= 0.0f)
         {
             SpawnEnemy1();
-            if (currentspawnTimer < 0.5f) // Limita il timer minimo per evitare valori negativi o troppo vicini a zero
+            if (currentspawnTimer <= 0.7f) // Limita il timer minimo per evitare valori negativi o troppo vicini a zero
             {
-                currentspawnTimer = 0.5f;
+                currentspawnTimer = 0.7f;
             }
         }
 
         if (currentspawnTimer2 <= 0.0f)
         {
             SpawnEnemy2();
-            if (currentspawnTimer2 < 1.0f) // Limita il timer minimo per evitare valori negativi o troppo vicini a zero
+            if (currentspawnTimer2 < 1.3f) // Limita il timer minimo per evitare valori negativi o troppo vicini a zero
             {
-                currentspawnTimer2 = 1.0f;
+                currentspawnTimer2 = 1.3f;
             }
         }
 
@@ -119,20 +119,20 @@ public class Controllo : MonoBehaviour
 
         if (spawnTimerBonusCurrent <= 0.0f)
         {
-            j = j + 5;
+            j = j + 3;
             float randomValue = Random.value; // Genera un numero casuale tra 0 e 1
 
             // Se il numero casuale è inferiore a 0.5, spawniamo il primo bonus, altrimenti il secondo
-            if (randomValue < 0.5f)
+            if (randomValue < 0.7f)
             {
 
                 GameObject instance = (GameObject)Instantiate(bonusLaserDannox2,
                 new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
                 transform.rotation);
                 spawnTimerBonusCurrent = spawnTimerBonus - j;
-                if(spawnTimerBonusCurrent <= 18.0f)
+                if(spawnTimerBonusCurrent <= 20.0f)
                 {
-                    spawnTimerBonusCurrent = 18.0f;
+                    spawnTimerBonusCurrent = 20.0f;
                 }
             }
             else
@@ -141,9 +141,9 @@ public class Controllo : MonoBehaviour
                new Vector3(10, Random.Range(-4.0f, 3.3f), -2.0f),
                transform.rotation);
                 spawnTimerBonusCurrent = spawnTimerBonus - j;
-                if (spawnTimerBonusCurrent <= 18.0f)
+                if (spawnTimerBonusCurrent <= 20.0f)
                 {
-                    spawnTimerBonusCurrent = 18.0f;
+                    spawnTimerBonusCurrent = 20.0f;
                 }
             }
         }
