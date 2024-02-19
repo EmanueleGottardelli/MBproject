@@ -13,23 +13,27 @@ public class GameObjectController : MonoBehaviour
     public float gameOverTime;
     public bool countDown;
 
+    public MiaNavicella player;
+   
 
     void CheckHighscore()
     {
-        int _score = PlayerPrefs.GetInt("CurrentScore", 0);
-        int _highscore = PlayerPrefs.GetInt("HighScore", 0);
-        if (_score > _highscore)
-            PlayerPrefs.SetInt("HighScore", _score);
+        int _score = PlayerPrefs.GetInt(player.user.currentUser + "CurrentScore", 0);
+        if (_score > player.record)
+            PlayerPrefs.SetInt(player.user.currentUser + "HighScore", _score);
+        player.record = PlayerPrefs.GetInt(player.user.currentUser + "HighScore", _score);
+        PlayerPrefs.Save();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
         countDown = true;
         gameOverTime = 5.0f;
         CheckHighscore();
-        scoreText.text = "Score: " + PlayerPrefs.GetInt("CurrentScore", 0);
-        highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0);
+        scoreText.text = "Score: " + PlayerPrefs.GetInt(player.user.currentUser + "CurrentScore", 0);
+        highScoreText.text = "Highscore: " + PlayerPrefs.GetInt(player.user.currentUser + "HighScore", 0);
         PlayerPrefs.Save();
     }
 

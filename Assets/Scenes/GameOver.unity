@@ -710,6 +710,7 @@ MonoBehaviour:
   highScoreText: {fileID: 597900622}
   gameOverTime: 5
   countDown: 1
+  player: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
 --- !u!1 &1652714526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,8 +1095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3152a2cd0341e4aaef3afc644bedcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 0}
-  settingsMenuPanel: {fileID: 0}
+  mainMenuPanel: {fileID: 3633619199967442503, guid: c9b9807197e2f27429e2dc55906b3c93, type: 3}
+  settingsMenuPanel: {fileID: 8132514424638492259, guid: a239a5abc1ca60846aa5e3250a6bea3b, type: 3}
 --- !u!114 &2039643874
 MonoBehaviour:
   m_ObjectHideFlags: 0

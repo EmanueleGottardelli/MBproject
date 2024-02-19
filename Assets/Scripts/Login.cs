@@ -10,9 +10,12 @@ public class Login : MonoBehaviour
     public Text errorMessageText;
     public Button signButton;
 
+    public string currentUser;
+    public int currentRecord;
+
     void Start()
     {
-     
+        
     }
 
     public void OnLoginButtonClick()
@@ -23,8 +26,13 @@ public class Login : MonoBehaviour
         // Simula un controllo delle credenziali
         if (CheckCredentials(username, password))
         {
+            currentUser = PlayerPrefs.GetString("username");
+            currentRecord = PlayerPrefs.GetInt(currentUser + "HighScore",0);
+            Debug.Log("username: " + currentUser);
+            Debug.Log("record: " + currentRecord);
             // Naviga alla scena principale del gioco
             SceneManager.LoadScene(1);
+
         }
         else
         {

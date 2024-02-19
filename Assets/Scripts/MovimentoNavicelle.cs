@@ -11,25 +11,27 @@ public class MovimentoNavicelle : MonoBehaviour
     public MiaNavicella player;
     public Vita vita;
 
+    
     void Start()
-    {
+    {      
         // Verifica se player è null
         if (player == null)
         {
             Debug.LogWarning("Il riferimento a player è null!");
         }
     }
-    void AddScore()
+    void AddScore(string username)
     {
         // prende il punteggio attuale
-        int _temp = PlayerPrefs.GetInt("CurrentScore");
+        int _temp = PlayerPrefs.GetInt( username + "CurrentScore",0);
         // aggiungiamo i punti e salviamo il nuovo risultato
         _temp = _temp + _tempScore;
-        PlayerPrefs.SetInt("CurrentScore", _temp);
-        Debug.Log("Punteggio aggiornato: " + _temp);
+        PlayerPrefs.SetInt(username + "CurrentScore", _temp);
+        PlayerPrefs.Save();
+        Debug.Log("Punteggio aggiornato per " + username + ": " + _temp);
 
-        int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        Debug.Log("High score attuale: " + highScore);
+        //int highScore = PlayerPrefs.GetInt(username +"HighScore", 0);
+        //Debug.Log("username: "+ username + "--> High score attuale: "+ highScore);
     }
 
 
@@ -46,7 +48,7 @@ public class MovimentoNavicelle : MonoBehaviour
                 GameObject explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
                 // Distruggi l'oggetto di esplosione dopo 0.3 secondi
                 Destroy(explosionInstance, 0.3f);
-                AddScore();
+                AddScore(player.user.currentUser);
 
             }
         }

@@ -10,39 +10,75 @@ public class Signin : MonoBehaviour
     public InputField passwordInputField;
     public Button SignIn;
     public Text errorMessageText;
+
+    // Dizionario per associare gli ID ai nomi utente
+    Dictionary<string, int> userIdMap;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Inizializza il dizionario caricando i dati salvati precedentemente
+        LoadUserIdMap();
     }
 
-   public void OnRegisterButtonClick()
+    void LoadUserIdMap()
+    {
+        // Carica il dizionario salvato precedentemente, se esiste
+        string userIdMapJson = PlayerPrefs.GetString("UserIdMap", "{}");
+        userIdMap = JsonUtility.FromJson<Dictionary<string, int>>(userIdMapJson);
+    }
+
+    void SaveUserIdMap()
+    {
+        // Salva il dizionario
+        string userIdMapJson = JsonUtility.ToJson(userIdMap);
+        PlayerPrefs.SetString("UserIdMap", userIdMapJson);
+        PlayerPrefs.Save();
+    }
+
+    public void OnRegisterButtonClick()
     {
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
-        // Simula un processo di registrazione
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
             errorMessageText.text = "Inserire un nome utente e una password.";
         }
-        else if (PlayerPrefs.HasKey(username))
+        else if (userIdMap.ContainsKey(username))
         {
             errorMessageText.text = "Il nome utente esiste già.";
         }
         else
         {
-            // Registra il nuovo utente
+            // Genera un nuovo ID per il nuovo utente
+            int newUserId = GenerateUniqueUserId();
+
+            // Aggiungi il nuovo utente al dizionario
+            userIdMap.Add(username, newUserId);
+
+            // Registra il nuovo utente con la sua password
+            PlayerPrefs.SetString("username", username);
             PlayerPrefs.SetString(username, password);
+            // Imposta l'highscore del nuovo utente a 0
+            PlayerPrefs.SetInt(username + "HighScore", 0);
+
+            // Salva il dizionario aggiornato e i dati dell'utente
+            SaveUserIdMap();
             PlayerPrefs.Save();
+
             errorMessageText.text = "Registrazione completata. Effettua l'accesso.";
             SceneManager.LoadScene(0);
         }
     }
-
+    int GenerateUniqueUserId()
+    {
+        // Genera un ID univoco basato sul timestamp attuale
+        return (int)System.DateTime.Now.Ticks;
+    }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

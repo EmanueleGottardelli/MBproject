@@ -17,10 +17,22 @@ public class MiaNavicella : MonoBehaviour
     public int bonus = 0;
     public int bonusCorrente;
     float bonusTimer = 10.0f;
+    public int record;
+    public Login user;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        if (user != null)
+        {
+            record = user.currentRecord;
+            Debug.Log("username: " + user.currentUser);
+        }
+        else
+        {
+            Debug.LogWarning("Nessun oggetto Login trovato nella scena!");
+        }        
         viteAttuali = viteIniziali;
         Debug.Log("Numero di vite: " + viteAttuali);
         bonusCorrente = bonus;

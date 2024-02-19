@@ -776,6 +776,10 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
+      propertyPath: user
+      value: 
+      objectReference: {fileID: 7502064715907765206, guid: e672f0b7b8587ae47a19806d10fa6521, type: 3}
+    - target: {fileID: 2256738235518138095, guid: 40332d4e48296b4499d19094fa44d08c, type: 3}
       propertyPath: bonusDanno
       value: 0
       objectReference: {fileID: 0}
