@@ -26,6 +26,10 @@ public class MovimentoNavicelle : MonoBehaviour
         // aggiungiamo i punti e salviamo il nuovo risultato
         _temp = _temp + _tempScore;
         PlayerPrefs.SetInt("CurrentScore", _temp);
+        Debug.Log("Punteggio aggiornato: " + _temp);
+
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        Debug.Log("High score attuale: " + highScore);
     }
 
 
