@@ -71,6 +71,11 @@ public class Signin : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    public void RitornaAlLogin()
+    {
+        SceneManager.LoadScene(0);
+    }
     int GenerateUniqueUserId()
     {
         // Genera un ID univoco basato sul timestamp attuale
